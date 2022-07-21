@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mycoach_app/utilities/otp_form.dart';
 
 class VerifyAccount extends StatefulWidget {
   @override
@@ -20,6 +21,14 @@ class _VerifyAccountState extends State<VerifyAccount> {
                 height: double.infinity,
                 width: double.infinity,
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 6.0,
+                      offset: Offset(0, 2),
+                    )
+                  ],
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -59,7 +68,9 @@ class _VerifyAccountState extends State<VerifyAccount> {
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                             ),
-                          )
+                          ),
+                          SizedBox(height: 50),
+                          OtpForm(),
                         ],
                       ),
                     ],

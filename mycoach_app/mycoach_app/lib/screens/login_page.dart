@@ -5,6 +5,8 @@ import 'package:mycoach_app/screens/register_page.dart';
 import 'package:mycoach_app/utilities/constants.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
