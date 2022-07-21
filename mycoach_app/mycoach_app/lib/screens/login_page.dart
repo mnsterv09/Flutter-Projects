@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mycoach_app/screens/forgot_password_page.dart';
 import 'package:mycoach_app/screens/register_page.dart';
 import 'package:mycoach_app/utilities/constants.dart';
 
@@ -69,9 +70,16 @@ class _LoginPageState extends State<LoginPage> {
   Widget _buildForgotPasswordButton() {
     return Container(
       alignment: Alignment.centerRight,
-      child: FlatButton(
-        onPressed: () => print('Forgot Password Button Pressed'),
-        padding: EdgeInsets.only(right: 0.0),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return ForgotPasswordPage();
+              },
+            ),
+          );
+        },
         child: Text(
           'Forgot password?',
           style: TextStyle(
@@ -138,11 +146,15 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildLoginWith() {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Text(
-          'Or login with',
+          'Or Login with',
           style: TextStyle(
-              fontSize: 12.0, fontFamily: 'Montserrat', color: Colors.black),
+              fontSize: 14.0,
+              fontFamily: 'Montserrat',
+              color: Colors.black,
+              fontWeight: FontWeight.w300),
         ),
         SizedBox(height: 20.0),
       ],
@@ -298,9 +310,11 @@ class _LoginPageState extends State<LoginPage> {
                           _buildEmailTF(),
                           SizedBox(height: 30.0),
                           _buildPasswordTF(),
+                          SizedBox(height: 5.0),
                           _buildForgotPasswordButton(),
                           _buildRememberMeCheckbox(),
                           _buildLoginButton(),
+                          _buildLoginWith(),
                           SizedBox(height: 30.00),
                           _buildSocialButtonRow(),
                           SizedBox(height: 90.00),
