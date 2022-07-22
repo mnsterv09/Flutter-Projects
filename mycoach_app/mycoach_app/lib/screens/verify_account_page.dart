@@ -21,14 +21,6 @@ class _VerifyAccountState extends State<VerifyAccount> {
                 height: double.infinity,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 6.0,
-                      offset: Offset(0, 2),
-                    )
-                  ],
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
