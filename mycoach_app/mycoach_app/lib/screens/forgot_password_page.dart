@@ -1,9 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:mycoach_app/screens/components/input_form_compopnent.dart';
-
-import 'components/button_component.dart';
+import 'package:mycoach_app/components/button_component.dart';
+import 'package:mycoach_app/components/input_form_component.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
@@ -19,8 +16,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 19),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             Text(
               'Reset Password',
@@ -31,16 +28,17 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             ),
             SizedBox(height: 8),
             Text(
-              'Enter your email and we’ll send an instructions to reset your password',
+              'Enter your email and we send an instructions to reset your password',
               style: TextStyle(
                 fontSize: 14,
               ),
             ),
-            SizedBox(height: 24),
+            SizedBox(height: 25),
             InputFormComponent(),
+            SizedBox(height: 25),
             ButtonComponent(
               onTap: null,
-              label: 'qwxwk',
+              label: 'Reset Password',
             ),
           ],
         ),

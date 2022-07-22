@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:mycoach_app/screens/forgot_password_page.dart';
-import 'package:mycoach_app/screens/register_page.dart';
-import 'package:mycoach_app/utilities/constants.dart';
+import 'package:mycoach_app/widgets/email_form_login.dart';
+import 'package:mycoach_app/widgets/forgot_password_button.dart';
+import 'package:mycoach_app/widgets/login_button_form.dart';
+import 'package:mycoach_app/widgets/login_with.dart';
+import 'package:mycoach_app/widgets/password_form_login.dart';
+import 'package:mycoach_app/widgets/register_form_login.dart';
+import 'package:mycoach_app/widgets/rememberme_checkbox_form.dart';
+import 'package:mycoach_app/widgets/social_button_row.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -12,323 +16,49 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool _rememberMe = false;
-
-  Widget _buildEmailTF() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          'Email',
-        ),
-        SizedBox(height: 10),
-        Container(
-          alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
-          height: 60,
-          child: TextField(
-            keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black),
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
-                Icons.email,
-                color: Colors.black12,
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildPasswordTF() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          'Password',
-        ),
-        SizedBox(height: 10),
-        Container(
-          alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
-          height: 60,
-          child: TextField(
-            obscureText: true,
-            style: TextStyle(color: Colors.black),
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(Icons.lock, color: Colors.black12),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildForgotPasswordButton() {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) {
-                return ForgotPasswordPage();
-              },
-            ),
-          );
-        },
-        child: Text(
-          'Forgot password?',
-          style: TextStyle(
-            fontFamily: 'Montserrat',
-            fontSize: 14,
-            color: Color.fromRGBO(0, 173, 181, 1),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildRememberMeCheckbox() {
-    return Container(
-      height: 20.0,
-      child: Row(
-        children: <Widget>[
-          Theme(
-            data: ThemeData(unselectedWidgetColor: Colors.black12),
-            child: Checkbox(
-              value: _rememberMe,
-              checkColor: Colors.black,
-              activeColor: Colors.white,
-              onChanged: (value) {
-                setState(() {
-                  _rememberMe = value!;
-                });
-              },
-            ),
-          ),
-          Text(
-            'Remember me',
-            style: TextStyle(
-                color: Colors.black, fontSize: 10, fontFamily: 'Montserrat'),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget _buildLoginButton() {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 25.0),
-      width: double.infinity,
-      child: RaisedButton(
-        elevation: 5.0,
-        onPressed: () => print('Login Button Pressed'),
-        padding: EdgeInsets.all(15.0),
-        shape: ContinuousRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
-        ),
-        color: Color.fromRGBO(0, 173, 181, 1),
-        child: Text('Login',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Montserrat',
-              letterSpacing: 1.5,
-            )),
-      ),
-    );
-  }
-
-  Widget _buildLoginWith() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          'Or Login with',
-          style: TextStyle(
-              fontSize: 14.0,
-              fontFamily: 'Montserrat',
-              color: Colors.black,
-              fontWeight: FontWeight.w300),
-        ),
-        SizedBox(height: 20.0),
-      ],
-    );
-  }
-
-  Widget _buildSocialButton(Function onTap, AssetImage logo) {
-    return GestureDetector(
-      onTap: () => onTap,
-      child: Container(
-        height: 30.0,
-        width: 140.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          shape: BoxShape.rectangle,
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              offset: Offset(0, 2),
-              blurRadius: 6.0,
-            ),
-          ],
-          image: DecorationImage(
-            image: logo,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSocialButtonRow() {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          _buildSocialButton(
-            () => print('Login with Google'),
-            AssetImage(
-              'assets/icons/googlelogo.svg',
-            ),
-          ),
-          SizedBox(height: 30),
-          _buildSocialButton(
-            () => print('Login with Facebook'),
-            AssetImage(
-              'assets/icons/facelogo.svg',
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildRegisterButton() {
-    return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) {
-            return RegisterPage();
-          },
-        ));
-      },
-      child: Align(
-        alignment: Alignment.center,
-        child: RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: 'Dont have an account?',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 14.0,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              TextSpan(
-                children: [
-                  TextSpan(
-                    text: ' Register!',
-                    style: TextStyle(
-                      color: Color.fromRGBO(0, 173, 181, 1),
-                      fontSize: 14.0,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.light,
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Stack(
-            children: <Widget>[
-              Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Colors.white],
-                  ),
-                ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 19),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Welcome to Fitness!',
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: 'Montserrat',
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
-              Container(
-                height: double.infinity,
-                child: SingleChildScrollView(
-                  physics: AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 40.0,
-                    vertical: 120.0,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Welcome to Fitness!',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'Montserrat',
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 10.0),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'Hello there, sign in to continue!',
-                            style: TextStyle(
-                              color: Color.fromRGBO(58, 71, 80, 1),
-                              fontFamily: 'Montserrat',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          SizedBox(height: 30.0),
-                          _buildEmailTF(),
-                          SizedBox(height: 30.0),
-                          _buildPasswordTF(),
-                          SizedBox(height: 5.0),
-                          _buildForgotPasswordButton(),
-                          _buildRememberMeCheckbox(),
-                          _buildLoginButton(),
-                          _buildLoginWith(),
-                          SizedBox(height: 30.00),
-                          _buildSocialButtonRow(),
-                          SizedBox(height: 90.00),
-                          _buildRegisterButton(),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+            ),
+            const SizedBox(height: 10.0),
+            const Text(
+              'Hello there, sign in to continue!',
+              style: TextStyle(
+                color: Color.fromRGBO(58, 71, 80, 1),
+                fontFamily: 'Montserrat',
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 30),
+            EmailFormLogin(),
+            const SizedBox(height: 30),
+            PasswordFormLogin(),
+            const SizedBox(height: 5),
+            ForgotPassword(),
+            const RememberMeCheckbox(),
+            const SizedBox(height: 15),
+            LoginButtonForm(),
+            const SizedBox(height: 30),
+            LoginWith(),
+            const SizedBox(height: 10),
+            SocialButtonRow(),
+            const SizedBox(height: 90),
+            RegisterButton(),
+          ],
         ),
       ),
     );

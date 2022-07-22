@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mycoach_app/screens/verify_account_page.dart';
 
 class ButtonComponent extends StatelessWidget {
   const ButtonComponent({
@@ -13,16 +14,31 @@ class ButtonComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) {
+            return const VerifyAccount();
+          },
+        ));
+      },
       child: Container(
         height: 52,
         width: MediaQuery.of(context).size.width,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: Colors.orangeAccent,
+          color: const Color.fromRGBO(0, 173, 181, 1),
           borderRadius: BorderRadius.circular(32),
         ),
-        child: Text(label),
+        child: Text(
+          label,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Montserrat',
+            letterSpacing: 1.5,
+          ),
+        ),
       ),
     );
   }

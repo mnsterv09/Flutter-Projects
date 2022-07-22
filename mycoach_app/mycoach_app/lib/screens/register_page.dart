@@ -3,6 +3,8 @@ import 'package:mycoach_app/screens/login_page.dart';
 import 'package:mycoach_app/utilities/constants.dart';
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
+
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
@@ -14,24 +16,24 @@ class _RegisterPageState extends State<RegisterPage> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
+          const Text(
             'Full Name',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16.0,
               color: Colors.black,
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w300,
             ),
           ),
-          SizedBox(height: 10.0),
+          const SizedBox(height: 10.0),
           Container(
               alignment: Alignment.centerLeft,
               decoration: kBoxDecorationStyle,
               height: 54.0,
-              child: TextField(
+              child: const TextField(
                 keyboardType: TextInputType.name,
                 style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.only(top: 15.0),
                     prefixIcon: Icon(Icons.person, color: Colors.black12)),
@@ -44,7 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
+          const Text(
             'Phone',
             style: TextStyle(
               fontSize: 16.0,
@@ -53,18 +55,18 @@ class _RegisterPageState extends State<RegisterPage> {
               fontWeight: FontWeight.w300,
             ),
           ),
-          SizedBox(height: 10.0),
+          const SizedBox(height: 10.0),
           Container(
             alignment: Alignment.centerLeft,
             decoration: kBoxDecorationStyle,
             height: 54.0,
-            child: TextField(
+            child: const TextField(
               keyboardType: TextInputType.number,
-              style: TextStyle(color: Colors.black),
+              style: const TextStyle(color: Colors.black),
               decoration: InputDecoration(
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(top: 15.0),
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     Icons.phone,
                     color: Colors.black12,
                   )),
@@ -78,24 +80,24 @@ class _RegisterPageState extends State<RegisterPage> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
+          const Text(
             'Email address',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16.0,
               color: Colors.black,
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w300,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Container(
             alignment: Alignment.centerLeft,
             decoration: kBoxDecorationStyle,
             height: 54.00,
-            child: TextField(
+            child: const TextField(
               keyboardType: TextInputType.emailAddress,
               style: TextStyle(color: Colors.black),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 15.0),
                 prefixIcon: Icon(
@@ -111,18 +113,18 @@ class _RegisterPageState extends State<RegisterPage> {
 
     Widget _buildCreateAccountBttn() {
       return Container(
-        padding: EdgeInsets.symmetric(vertical: 25.0),
+        padding: const EdgeInsets.symmetric(vertical: 25.0),
         width: double.infinity,
         child: RaisedButton(
           elevation: 5.0,
-          onPressed: () => print('Create Account Button Pressed'),
-          padding: EdgeInsets.all(15.0),
+          onPressed: () => ('Create Account Button Pressed'),
+          padding: const EdgeInsets.all(15.0),
           shape: ContinuousRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
           ),
-          color: Color.fromRGBO(0, 173, 181, 1),
-          child: Text('Create Account',
-              style: TextStyle(
+          color: const Color.fromRGBO(0, 173, 181, 1),
+          child: const Text('Create Account',
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
@@ -135,21 +137,21 @@ class _RegisterPageState extends State<RegisterPage> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
+          const Text(
             'Password',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16.0,
               color: Colors.black,
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w300,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Container(
             alignment: Alignment.centerLeft,
             decoration: kBoxDecorationStyle,
             height: 54,
-            child: TextField(
+            child: const TextField(
               obscureText: true,
               style: TextStyle(color: Colors.black),
               decoration: InputDecoration(
@@ -167,9 +169,9 @@ class _RegisterPageState extends State<RegisterPage> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Text(
+          const Text(
             'Or Register with',
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 14.0,
                 fontFamily: 'Montserrat',
                 color: Colors.black,
@@ -190,7 +192,7 @@ class _RegisterPageState extends State<RegisterPage> {
             shape: BoxShape.rectangle,
             color: Colors.white,
             boxShadow: [
-              BoxShadow(
+              const BoxShadow(
                 color: Colors.black26,
                 offset: Offset(0, 2),
                 blurRadius: 6.0,
@@ -206,20 +208,20 @@ class _RegisterPageState extends State<RegisterPage> {
 
     Widget _buildSocialRegisterButtonRow() {
       return Padding(
-        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             _buildSocialRegisterBttn(
               () => print('Login with Google'),
-              AssetImage(
+              const AssetImage(
                 'assets/icons/googlelogo.svg',
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             _buildSocialRegisterBttn(
               () => print('Login with Facebook'),
-              AssetImage(
+              const AssetImage(
                 'assets/icons/facelogo.svg',
               ),
             ),
@@ -233,16 +235,16 @@ class _RegisterPageState extends State<RegisterPage> {
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
             builder: (context) {
-              return LoginPage();
+              return const LoginPage();
             },
           ));
         },
         child: Align(
           alignment: Alignment.center,
           child: RichText(
-            text: TextSpan(
+            text: const TextSpan(
               children: [
-                TextSpan(
+                const TextSpan(
                   text: 'Already have an account?',
                   style: TextStyle(
                     color: Colors.black,
@@ -251,9 +253,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(
+                const TextSpan(
                   children: [
-                    TextSpan(
+                    const TextSpan(
                       text: ' Login!',
                       style: TextStyle(
                         color: Color.fromRGBO(0, 173, 181, 1),
@@ -277,8 +279,8 @@ class _RegisterPageState extends State<RegisterPage> {
           Container(
             height: double.infinity,
             width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
+            decoration: const BoxDecoration(
+              gradient: const LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [Colors.white],
@@ -289,13 +291,13 @@ class _RegisterPageState extends State<RegisterPage> {
           Container(
               height: double.infinity,
               child: SingleChildScrollView(
-                physics: AlwaysScrollableScrollPhysics(),
-                padding:
-                    EdgeInsets.symmetric(horizontal: 40.0, vertical: 120.0),
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 40.0, vertical: 120.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Create Accounts',
                       style: TextStyle(
                           color: Colors.black,
@@ -303,11 +305,11 @@ class _RegisterPageState extends State<RegisterPage> {
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
+                        const Text(
                           'Please enter your credentials to proceed',
                           style: TextStyle(
                             color: Color.fromRGBO(58, 71, 80, 1),
@@ -316,21 +318,21 @@ class _RegisterPageState extends State<RegisterPage> {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                        SizedBox(height: 30.0),
+                        const SizedBox(height: 30.0),
                         _buildNameTF(),
-                        SizedBox(height: 15.0),
+                        const SizedBox(height: 15.0),
                         _buildPhoneTF(),
-                        SizedBox(height: 15.0),
+                        const SizedBox(height: 15.0),
                         _buildEmailRegisterTF(),
-                        SizedBox(height: 15.0),
+                        const SizedBox(height: 15.0),
                         _buildPasswordRegisterTF(),
-                        SizedBox(height: 10.0),
+                        const SizedBox(height: 10.0),
                         _buildCreateAccountBttn(),
-                        SizedBox(height: 10.0),
+                        const SizedBox(height: 10.0),
                         _buildRegisterWith(),
-                        SizedBox(height: 30.0),
+                        const SizedBox(height: 30.0),
                         _buildSocialRegisterButtonRow(),
-                        SizedBox(height: 30.0),
+                        const SizedBox(height: 30.0),
                         _buildLoginButton(),
                       ],
                     ),

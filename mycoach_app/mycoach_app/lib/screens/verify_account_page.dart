@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mycoach_app/utilities/otp_form.dart';
+import 'package:mycoach_app/components/otp_form_component.dart';
 
 class VerifyAccount extends StatefulWidget {
+  const VerifyAccount({Key? key}) : super(key: key);
+
   @override
   State<VerifyAccount> createState() => _VerifyAccountState();
 }
@@ -20,7 +22,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
               Container(
                 height: double.infinity,
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -28,18 +30,18 @@ class _VerifyAccountState extends State<VerifyAccount> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: double.infinity,
                 child: SingleChildScrollView(
-                  physics: AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 40.0,
                     vertical: 120.0,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'Verify Account',
                         style: TextStyle(
                           color: Colors.black,
@@ -48,10 +50,10 @@ class _VerifyAccountState extends State<VerifyAccount> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 10.0),
+                      const SizedBox(height: 10.0),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
+                        children: const <Widget>[
                           Text(
                             'Verify your account by entering verification code we sent to your email',
                             style: TextStyle(
