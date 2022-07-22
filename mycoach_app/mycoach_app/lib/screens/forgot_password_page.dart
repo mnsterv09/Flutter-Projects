@@ -1,8 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:mycoach_app/screens/verify_account_page.dart';
+import 'package:mycoach_app/screens/components/input_form_compopnent.dart';
+
+import 'components/button_component.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
@@ -15,102 +16,33 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.light,
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Stack(
-            children: <Widget>[
-              Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Colors.white],
-                  ),
-                ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 19),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text(
+              'Reset Password',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
               ),
-              SizedBox(
-                height: double.infinity,
-                child: SingleChildScrollView(
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 40.0,
-                    vertical: 120.0,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      const Text(
-                        'Forgot Password',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'Montserrat',
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 10.0),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          const Text(
-                            'Please enter your email below to receive your password reset code',
-                            style: TextStyle(
-                              color: Color.fromRGBO(58, 71, 80, 1),
-                              fontFamily: 'Montserrat',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          const SizedBox(height: 30.0),
-                          const TextField(
-                            keyboardType: TextInputType.emailAddress,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.only(top: 14.0),
-                              prefixIcon: Icon(
-                                Icons.email,
-                                color: Colors.black12,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 50),
-                          Container(
-                            padding: const EdgeInsets.symmetric(vertical: 25.0),
-                            width: double.infinity,
-                            child: RaisedButton(
-                              elevation: 5.0,
-                              padding: const EdgeInsets.all(15.0),
-                              shape: ContinuousRectangleBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                              ),
-                              color: const Color.fromRGBO(0, 173, 181, 1),
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => VerifyAccount()));
-                              },
-                              child: const Text('Reset Password',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Montserrat',
-                                    letterSpacing: 1.5,
-                                  )),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Enter your email and we’ll send an instructions to reset your password',
+              style: TextStyle(
+                fontSize: 14,
               ),
-            ],
-          ),
+            ),
+            SizedBox(height: 24),
+            InputFormComponent(),
+            ButtonComponent(
+              onTap: null,
+              label: 'qwxwk',
+            ),
+          ],
         ),
       ),
     );
