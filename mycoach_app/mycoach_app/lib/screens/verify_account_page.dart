@@ -68,7 +68,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
                           const SizedBox(height: 70),
                           const OtpForm(),
                           const SizedBox(height: 50),
-                          ResendFormButton(),
+                          const ResendFormButton(),
                           const SizedBox(height: 70),
                           ResetPasswordButtonForm(),
                         ],

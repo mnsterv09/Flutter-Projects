@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mycoach_app/screens/login_page.dart';
+import 'package:mycoach_app/screens/onboarding_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: title,
       theme: ThemeData(primaryColor: Colors.purple),
-      home: const LoginPage(),
+      home: const OnBoardingPage(),
     );
   }
 }
