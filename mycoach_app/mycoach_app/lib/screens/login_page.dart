@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mycoach_app/widgets/email_form_login.dart';
+import 'package:mycoach_app/widgets/email_form.dart';
 import 'package:mycoach_app/widgets/forgot_password_button.dart';
 import 'package:mycoach_app/widgets/login_button_form.dart';
 import 'package:mycoach_app/widgets/login_with.dart';
-import 'package:mycoach_app/widgets/password_form_login.dart';
+import 'package:mycoach_app/widgets/password_form.dart';
 import 'package:mycoach_app/widgets/register_form_login.dart';
 import 'package:mycoach_app/widgets/rememberme_checkbox_form.dart';
 import 'package:mycoach_app/widgets/social_button_row.dart';

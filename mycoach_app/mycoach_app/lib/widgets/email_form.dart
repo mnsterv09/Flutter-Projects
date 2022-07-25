@@ -12,18 +12,14 @@ Widget EmailFormLogin() {
       Container(
         alignment: Alignment.centerLeft,
         decoration: kBoxDecorationStyle,
-        height: 60,
+        height: 54.0,
         child: const TextField(
-          keyboardType: TextInputType.emailAddress,
+          keyboardType: TextInputType.name,
           style: TextStyle(color: Colors.black),
           decoration: InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.only(top: 14.0),
-            prefixIcon: Icon(
-              Icons.email,
-              color: Colors.black12,
-            ),
-          ),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 15.0),
+              prefixIcon: Icon(Icons.person, color: Colors.black12)),
         ),
       ),
     ],
