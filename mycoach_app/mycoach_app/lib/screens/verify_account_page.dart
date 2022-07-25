@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mycoach_app/components/otp_form_component.dart';
+import 'package:mycoach_app/widgets/resend_form.dart';
+import 'package:mycoach_app/widgets/reset_password_button.dart';
 
 class VerifyAccount extends StatefulWidget {
   const VerifyAccount({Key? key}) : super(key: key);
@@ -53,8 +55,8 @@ class _VerifyAccountState extends State<VerifyAccount> {
                       const SizedBox(height: 10.0),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const <Widget>[
-                          Text(
+                        children: <Widget>[
+                          const Text(
                             'Verify your account by entering verification code we sent to your email',
                             style: TextStyle(
                               color: Color.fromRGBO(58, 71, 80, 1),
@@ -63,8 +65,12 @@ class _VerifyAccountState extends State<VerifyAccount> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(height: 50),
-                          OtpForm(),
+                          const SizedBox(height: 70),
+                          const OtpForm(),
+                          const SizedBox(height: 50),
+                          const ResendFormButton(),
+                          const SizedBox(height: 70),
+                          ResetPasswordButtonForm(),
                         ],
                       ),
                     ],
