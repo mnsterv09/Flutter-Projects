@@ -24,6 +24,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
+                fontFamily: 'Monteserrat',
               ),
             ),
             SizedBox(height: 8),
