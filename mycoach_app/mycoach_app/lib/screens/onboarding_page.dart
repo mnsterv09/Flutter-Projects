@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mycoach_app/home/intro_screens.dart/Intro_page_1.dart';
-import 'package:mycoach_app/home/intro_screens.dart/intro_page_2.dart';
-import 'package:mycoach_app/home/intro_screens.dart/intro_page_3.dart';
+import 'package:mycoach_app/home/intro/intro_page_1.dart';
+import 'package:mycoach_app/home/intro/intro_page_2.dart';
+import 'package:mycoach_app/home/intro/intro_page_3.dart';
 import 'package:mycoach_app/screens/login_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
