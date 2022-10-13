@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mycoach_app/home/home_screen.dart';
+import 'package:mycoach_app/screens/steps_pages/favorite_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: title,
       theme: ThemeData(primaryColor: Colors.purple),
-      home: const HomePage(),
+      home: const FavoritePage(),
     );
   }
 }
